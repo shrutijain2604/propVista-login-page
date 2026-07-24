@@ -15,7 +15,10 @@ export const {
 } = NextAuth({
   providers: [
     Google,
-    Facebook,
+    // Facebook needs AUTH_FACEBOOK_ID/SECRET — until those exist, including
+    // this provider with empty credentials breaks the whole auth handler,
+    // not just Facebook sign-in.
+    ...(process.env.AUTH_FACEBOOK_ID && process.env.AUTH_FACEBOOK_SECRET ? [Facebook] : []),
     Credentials({
       credentials: {
         email: { label: "Email", type: "email" },
