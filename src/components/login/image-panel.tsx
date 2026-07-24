@@ -1,12 +1,11 @@
-import Image from "next/image";
 import { ShieldCheck } from "lucide-react";
 
 import { LogoMark } from "@/components/login/logo-mark";
 
 const bullets = [
-  { src: "/1st%20bullet%20icon.png", width: 13, height: 18, text: "All your leads in one place" },
-  { src: "/2nd%20bullet%20logo.png", width: 20, height: 14, text: "Close more deals, faster" },
-  { src: "/3rd%20bullet%20logo.png", width: 17, height: 21, text: "Insights that drive growth" },
+  { src: "/1st_bullet.svg", width: 13, height: 18, text: "All your leads in one place" },
+  { src: "/2nd_bullet.svg", width: 20, height: 14, text: "Close more deals, faster" },
+  { src: "/3rd_bullet.svg", width: 17, height: 21, text: "Insights that drive growth" },
 ];
 
 export function ImagePanel() {
@@ -51,7 +50,7 @@ export function ImagePanel() {
           {bullets.map(({ src, width, height, text }) => (
             <li key={text} className="flex items-center gap-3 text-sm text-slate-100">
               <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-white/10">
-                <Image src={src} alt="" width={width} height={height} />
+                <img src={src} alt="" width={width} height={height} />
               </span>
               {text}
             </li>
